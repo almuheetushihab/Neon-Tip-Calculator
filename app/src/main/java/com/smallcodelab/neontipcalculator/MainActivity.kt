@@ -4,30 +4,30 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.smallcodelab.neontipcalculator.model.TipOption
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.TipCalculatorScreen
 import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.TipCalculatorUiState
 import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.TipCalculatorViewModel
 import com.smallcodelab.neontipcalculator.ui.theme.NeonTipCalculatorTheme
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
- * Main activity host for the Neon Tip Calculator app.
+ * Main activity host annotated with Hilt @AndroidEntryPoint.
  */
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private val viewModel: TipCalculatorViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             NeonTipCalculatorTheme {
-                TipApp(viewModel = viewModel)
+                TipApp()
             }
         }
     }
@@ -36,12 +36,12 @@ class MainActivity : ComponentActivity() {
 /**
  * Top-level composable binding ViewModel state to [TipCalculatorScreen].
  *
- * @param viewModel ViewModel holding calculation state and logic.
+ * @param viewModel Hilt injected ViewModel instance.
  * @param modifier Composable modifier.
  */
 @Composable
 fun TipApp(
-    viewModel: TipCalculatorViewModel,
+    viewModel: TipCalculatorViewModel = hiltViewModel(),
     modifier: Modifier = Modifier
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -50,7 +50,15 @@ fun TipApp(
         uiState = uiState,
         onBillInputChanged = viewModel::onBillInputChanged,
         onTipSelected = viewModel::onTipSelected,
+        onCustomTipPercentageChanged = viewModel::onCustomTipPercentageChanged,
         onSplitAction = viewModel::onSplitAction,
+        onRoundUpToggled = viewModel::onRoundUpToggled,
+        onCurrencySelected = viewModel::onCurrencySelected,
+        onSaveToHistory = viewModel::onSaveToHistory,
+        onDeleteHistoryItem = viewModel::onDeleteHistoryItem,
+        onClearAllHistory = viewModel::onClearAllHistory,
+        onToggleHistorySheet = viewModel::onToggleHistorySheet,
+        onToastShown = viewModel::onToastShown,
         modifier = modifier
     )
 }
@@ -60,14 +68,18 @@ fun TipApp(
 fun TipAppPreview() {
     NeonTipCalculatorTheme {
         TipCalculatorScreen(
-            uiState = TipCalculatorUiState(
-                billInput = "120",
-                selectedTip = TipOption.FIFTEEN,
-                peopleCount = 2
-            ),
+            uiState = TipCalculatorUiState(),
             onBillInputChanged = {},
             onTipSelected = {},
-            onSplitAction = {}
+            onCustomTipPercentageChanged = {},
+            onSplitAction = {},
+            onRoundUpToggled = {},
+            onCurrencySelected = {},
+            onSaveToHistory = {},
+            onDeleteHistoryItem = {},
+            onClearAllHistory = {},
+            onToggleHistorySheet = {},
+            onToastShown = {}
         )
     }
 }

@@ -3,17 +3,31 @@
     <string name="header_subtitle">SMALL CODE LAB</string>
     <string name="header_title">Tip Calculator</string>
     <string name="label_bill_amount">Bill amount</string>
-    <string name="currency_symbol">$</string>
-    <string name="currency_prefix">$ </string>
     <string name="bill_amount_placeholder">0.00</string>
     <string name="label_select_tip">Select tip</string>
+    <string name="label_custom_tip">Custom Tip (%1$d%%)</string>
     <string name="label_split_between">Split between</string>
+    <string name="label_round_up">Round up per person</string>
     <string name="label_per_person">PER PERSON</string>
     <string name="label_total">Total %s</string>
     <string name="btn_decrement">-</string>
     <string name="btn_increment">+</string>
-    <string name="format_currency">$%.2f</string>
-    <string name="format_percentage">%d%%</string>
+    <string name="btn_history">History</string>
+    <string name="btn_save_history">Save</string>
+    <string name="btn_share">Share</string>
+    <string name="btn_clear_all">Clear All</string>
+    <string name="history_title">Calculation History</string>
+    <string name="history_empty">No history saved yet!</string>
+    <string name="history_empty_subtitle">Save your split calculations to view them here anytime.</string>
+    <string name="toast_saved">Saved to history!</string>
+
+    <string name="share_summary_title">--- Neon Tip Calculator ---</string>
+    <string name="share_bill">Bill Amount: %s</string>
+    <string name="share_tip">Tip: %1$d%%</string>
+    <string name="share_people">Split between: %1$d people</string>
+    <string name="share_total">Total: %s</string>
+    <string name="share_per_person">Per Person: %s</string>
+    <string name="share_footer">Build Small. Learn Big. - Small Code Lab</string>
 
     <!-- Accessibility Content Descriptions -->
     <string name="cd_background_glow">Neon ambient background glow animation</string>
@@ -21,7 +35,14 @@
     <string name="cd_tip_percentage_ring">Tip percentage progress ring</string>
     <string name="cd_bill_input">Bill amount input field</string>
     <string name="cd_tip_chip">Select %1$d percent tip</string>
+    <string name="cd_custom_chip">Select custom tip percentage</string>
     <string name="cd_decrement_people">Decrease number of people splitting bill</string>
     <string name="cd_increment_people">Increase number of people splitting bill</string>
     <string name="cd_people_count">Current split between %1$d people</string>
+    <string name="cd_currency_selector">Select currency option</string>
+    <string name="cd_history_button">Open calculation history bottom sheet</string>
+    <string name="cd_share_button">Share calculation summary</string>
+    <string name="cd_save_button">Save calculation to history</string>
+    <string name="cd_round_up_switch">Toggle round up per person</string>
+    <string name="cd_delete_history_item">Delete history entry</string>
 </resources>
