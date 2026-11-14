@@ -9,6 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.TipCalculatorScreen
 import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.TipCalculatorUiState
@@ -17,12 +18,13 @@ import com.smallcodelab.neontipcalculator.ui.theme.NeonTipCalculatorTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
- * Main activity host annotated with Hilt @AndroidEntryPoint.
+ * Main activity host for the Neon Tip Calculator app with splash screen & Hilt DI support.
  */
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
