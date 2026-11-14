@@ -1,4 +1,4 @@
-package com.example.neon_tip_calculator.ui.theme
+package com.smallcodelab.neontipcalculator.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

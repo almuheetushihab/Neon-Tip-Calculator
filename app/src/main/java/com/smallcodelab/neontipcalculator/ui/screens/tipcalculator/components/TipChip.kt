@@ -1,4 +1,4 @@
-package com.example.neon_tip_calculator.ui.screens.tipcalculator.components
+package com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Spring
@@ -24,14 +24,22 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.neon_tip_calculator.R
-import com.example.neon_tip_calculator.model.TipOption
-import com.example.neon_tip_calculator.ui.theme.DarkBg
-import com.example.neon_tip_calculator.ui.theme.NeonGreen
-import com.example.neon_tip_calculator.ui.theme.NeonTipCalculatorTheme
-import com.example.neon_tip_calculator.ui.theme.PanelBg
-import com.example.neon_tip_calculator.ui.theme.WhiteText
+import com.smallcodelab.neontipcalculator.R
+import com.smallcodelab.neontipcalculator.model.TipOption
+import com.smallcodelab.neontipcalculator.ui.theme.DarkBg
+import com.smallcodelab.neontipcalculator.ui.theme.NeonGreen
+import com.smallcodelab.neontipcalculator.ui.theme.NeonTipCalculatorTheme
+import com.smallcodelab.neontipcalculator.ui.theme.PanelBg
+import com.smallcodelab.neontipcalculator.ui.theme.WhiteText
 
+/**
+ * Selectable tip percentage chip component with scaling and color animations.
+ *
+ * @param tipOption Associated [TipOption] percentage item.
+ * @param selected Whether this chip is currently selected.
+ * @param onClick Callback triggered on click.
+ * @param modifier Composable modifier.
+ */
 @Composable
 fun TipChip(
     tipOption: TipOption,

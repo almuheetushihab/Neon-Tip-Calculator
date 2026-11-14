@@ -1,4 +1,4 @@
-package com.example.neon_tip_calculator.ui.screens.tipcalculator
+package com.smallcodelab.neontipcalculator.ui.screens.tipcalculator
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
@@ -32,21 +32,30 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.neon_tip_calculator.R
-import com.example.neon_tip_calculator.model.SplitAction
-import com.example.neon_tip_calculator.model.TipOption
-import com.example.neon_tip_calculator.ui.screens.tipcalculator.components.Appear
-import com.example.neon_tip_calculator.ui.screens.tipcalculator.components.GlowBackground
-import com.example.neon_tip_calculator.ui.screens.tipcalculator.components.ResultCard
-import com.example.neon_tip_calculator.ui.screens.tipcalculator.components.RoundBtn
-import com.example.neon_tip_calculator.ui.screens.tipcalculator.components.TipChip
-import com.example.neon_tip_calculator.ui.theme.BorderMuted
-import com.example.neon_tip_calculator.ui.theme.MutedText
-import com.example.neon_tip_calculator.ui.theme.NeonGreen
-import com.example.neon_tip_calculator.ui.theme.NeonTipCalculatorTheme
-import com.example.neon_tip_calculator.ui.theme.PanelBg
-import com.example.neon_tip_calculator.ui.theme.WhiteText
+import com.smallcodelab.neontipcalculator.R
+import com.smallcodelab.neontipcalculator.model.SplitAction
+import com.smallcodelab.neontipcalculator.model.TipOption
+import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components.Appear
+import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components.GlowBackground
+import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components.ResultCard
+import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components.RoundBtn
+import com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components.TipChip
+import com.smallcodelab.neontipcalculator.ui.theme.BorderMuted
+import com.smallcodelab.neontipcalculator.ui.theme.MutedText
+import com.smallcodelab.neontipcalculator.ui.theme.NeonGreen
+import com.smallcodelab.neontipcalculator.ui.theme.NeonTipCalculatorTheme
+import com.smallcodelab.neontipcalculator.ui.theme.PanelBg
+import com.smallcodelab.neontipcalculator.ui.theme.WhiteText
 
+/**
+ * Main Tip Calculator screen composable layout.
+ *
+ * @param uiState Current UI state snapshot of the tip calculator screen.
+ * @param onBillInputChanged Callback invoked when bill text input changes.
+ * @param onTipSelected Callback invoked when a tip option is selected.
+ * @param onSplitAction Callback invoked when split increment/decrement buttons are pressed.
+ * @param modifier Composable modifier.
+ */
 @Composable
 fun TipCalculatorScreen(
     uiState: TipCalculatorUiState,
@@ -208,11 +217,7 @@ fun TipCalculatorScreen(
 fun TipCalculatorScreenPreview() {
     NeonTipCalculatorTheme {
         TipCalculatorScreen(
-            uiState = TipCalculatorUiState(
-                billInput = "120",
-                selectedTip = TipOption.FIFTEEN,
-                peopleCount = 2
-            ),
+            uiState = TipCalculatorUiState(),
             onBillInputChanged = {},
             onTipSelected = {},
             onSplitAction = {}

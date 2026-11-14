@@ -1,4 +1,4 @@
-package com.example.neon_tip_calculator.ui.screens.tipcalculator.components
+package com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -13,9 +13,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.neon_tip_calculator.ui.theme.NeonTipCalculatorTheme
+import com.smallcodelab.neontipcalculator.ui.theme.NeonTipCalculatorTheme
 import kotlinx.coroutines.delay
 
+/**
+ * Animated visibility container providing slide-in and fade-in entrance effect.
+ *
+ * @param modifier Composable modifier.
+ * @param delayMs Delay in milliseconds before entrance animation begins.
+ * @param content Inner composable content to animate.
+ */
 @Composable
 fun Appear(
     modifier: Modifier = Modifier,

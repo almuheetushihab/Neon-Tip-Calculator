@@ -1,4 +1,4 @@
-package com.example.neon_tip_calculator.ui.screens.tipcalculator.components
+package com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
@@ -23,13 +23,18 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.neon_tip_calculator.R
-import com.example.neon_tip_calculator.ui.theme.CyanBlue
-import com.example.neon_tip_calculator.ui.theme.DarkBg
-import com.example.neon_tip_calculator.ui.theme.NeonGreen
-import com.example.neon_tip_calculator.ui.theme.NeonTipCalculatorTheme
-import com.example.neon_tip_calculator.ui.theme.TransparentColor
+import com.smallcodelab.neontipcalculator.R
+import com.smallcodelab.neontipcalculator.ui.theme.CyanBlue
+import com.smallcodelab.neontipcalculator.ui.theme.DarkBg
+import com.smallcodelab.neontipcalculator.ui.theme.NeonGreen
+import com.smallcodelab.neontipcalculator.ui.theme.NeonTipCalculatorTheme
+import com.smallcodelab.neontipcalculator.ui.theme.TransparentColor
 
+/**
+ * Animated background displaying glowing neon radial gradients.
+ *
+ * @param modifier Composable modifier.
+ */
 @Composable
 fun GlowBackground(
     modifier: Modifier = Modifier

@@ -1,4 +1,4 @@
-package com.example.neon_tip_calculator.ui.screens.tipcalculator.components
+package com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -31,20 +31,30 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.neon_tip_calculator.R
-import com.example.neon_tip_calculator.model.TipOption
-import com.example.neon_tip_calculator.ui.theme.ArcBackground
-import com.example.neon_tip_calculator.ui.theme.CyanBlue
-import com.example.neon_tip_calculator.ui.theme.MutedText
-import com.example.neon_tip_calculator.ui.theme.NeonGreen
-import com.example.neon_tip_calculator.ui.theme.NeonTipCalculatorTheme
-import com.example.neon_tip_calculator.ui.theme.PanelBg
-import com.example.neon_tip_calculator.ui.theme.WhiteText
+import com.smallcodelab.neontipcalculator.R
+import com.smallcodelab.neontipcalculator.model.TipOption
+import com.smallcodelab.neontipcalculator.ui.theme.ArcBackground
+import com.smallcodelab.neontipcalculator.ui.theme.CyanBlue
+import com.smallcodelab.neontipcalculator.ui.theme.MutedText
+import com.smallcodelab.neontipcalculator.ui.theme.NeonGreen
+import com.smallcodelab.neontipcalculator.ui.theme.NeonTipCalculatorTheme
+import com.smallcodelab.neontipcalculator.ui.theme.PanelBg
+import com.smallcodelab.neontipcalculator.ui.theme.WhiteText
+import java.math.BigDecimal
+import java.math.RoundingMode
 
+/**
+ * Result summary card displaying calculated per-person amount, total bill, and tip percentage ring.
+ *
+ * @param amountPerPerson Amount calculated per person.
+ * @param totalAmount Total calculated bill amount including tip.
+ * @param tipOption Selected tip option.
+ * @param modifier Composable layout modifier.
+ */
 @Composable
 fun ResultCard(
-    amountPerPerson: Double,
-    totalAmount: Double,
+    amountPerPerson: BigDecimal,
+    totalAmount: BigDecimal,
     tipOption: TipOption,
     modifier: Modifier = Modifier
 ) {
@@ -58,8 +68,9 @@ fun ResultCard(
     val cardContentDescription = stringResource(id = R.string.cd_result_card)
     val ringContentDescription = stringResource(id = R.string.cd_tip_percentage_ring)
 
-    val formattedPerPerson = stringResource(id = R.string.format_currency, amountPerPerson)
-    val formattedTotal = stringResource(id = R.string.format_currency, totalAmount)
+    val currencySymbol = stringResource(id = R.string.currency_symbol)
+    val formattedPerPerson = "$currencySymbol${amountPerPerson.setScale(2, RoundingMode.HALF_UP)}"
+    val formattedTotal = "$currencySymbol${totalAmount.setScale(2, RoundingMode.HALF_UP)}"
 
     Row(
         modifier = modifier
@@ -145,8 +156,8 @@ fun ResultCard(
 fun ResultCardPreview() {
     NeonTipCalculatorTheme {
         ResultCard(
-            amountPerPerson = 69.0,
-            totalAmount = 138.0,
+            amountPerPerson = BigDecimal("69.00"),
+            totalAmount = BigDecimal("138.00"),
             tipOption = TipOption.FIFTEEN
         )
     }

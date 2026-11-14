@@ -4,13 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.neon_tip_calculator"
-    compileSdk {
-        version = release(37)
-    }
+    namespace = "com.smallcodelab.neontipcalculator"
+    compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.example.neon_tip_calculator"
+        applicationId = "com.smallcodelab.neontipcalculator"
         minSdk = 24
         targetSdk = 37
         versionCode = 1

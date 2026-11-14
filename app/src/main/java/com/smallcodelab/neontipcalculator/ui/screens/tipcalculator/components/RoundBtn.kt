@@ -1,4 +1,4 @@
-package com.example.neon_tip_calculator.ui.screens.tipcalculator.components
+package com.smallcodelab.neontipcalculator.ui.screens.tipcalculator.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,10 +17,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.neon_tip_calculator.ui.theme.DarkBg
-import com.example.neon_tip_calculator.ui.theme.NeonGreen
-import com.example.neon_tip_calculator.ui.theme.NeonTipCalculatorTheme
+import com.smallcodelab.neontipcalculator.ui.theme.DarkBg
+import com.smallcodelab.neontipcalculator.ui.theme.NeonGreen
+import com.smallcodelab.neontipcalculator.ui.theme.NeonTipCalculatorTheme
 
+/**
+ * Circular action button component used for incrementing and decrementing values.
+ *
+ * @param symbol Text or symbol displayed inside the button (e.g. "+" or "-").
+ * @param contentDescriptionText Accessibility label describing button action.
+ * @param onClick Action callback when clicked.
+ * @param modifier Composable modifier.
+ * @param enabled Whether button interactions are enabled.
+ */
 @Composable
 fun RoundBtn(
     symbol: String,
