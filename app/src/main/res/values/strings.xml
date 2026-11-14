@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">Neon-Tip-Calculator</string>
+    <string name="app_name">Neon Tip Calculator</string>
+    <string name="header_subtitle">SMALL CODE LAB</string>
+    <string name="header_title">Tip Calculator</string>
+    <string name="label_bill_amount">Bill amount</string>
+    <string name="currency_symbol">$</string>
+    <string name="currency_prefix">$ </string>
+    <string name="bill_amount_placeholder">0.00</string>
+    <string name="label_select_tip">Select tip</string>
+    <string name="label_split_between">Split between</string>
+    <string name="label_per_person">PER PERSON</string>
+    <string name="label_total">Total %s</string>
+    <string name="btn_decrement">-</string>
+    <string name="btn_increment">+</string>
+    <string name="format_currency">$%.2f</string>
+    <string name="format_percentage">%d%%</string>
+
+    <!-- Accessibility Content Descriptions -->
+    <string name="cd_background_glow">Neon ambient background glow animation</string>
+    <string name="cd_result_card">Tip summary showing per person and total amount</string>
+    <string name="cd_tip_percentage_ring">Tip percentage progress ring</string>
+    <string name="cd_bill_input">Bill amount input field</string>
+    <string name="cd_tip_chip">Select %1$d percent tip</string>
+    <string name="cd_decrement_people">Decrease number of people splitting bill</string>
+    <string name="cd_increment_people">Increase number of people splitting bill</string>
+    <string name="cd_people_count">Current split between %1$d people</string>
 </resources>
